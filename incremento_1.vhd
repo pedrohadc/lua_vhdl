@@ -47,19 +47,7 @@ use IEEE.STD_LOGIC_1164.ALL;
 	end incremento_1;
 	
 
-	
-
-
-
-	
-
 	architecture hardware of incremento_1 is
-	
-
-	
-
-
-
 	
 
 	 component somador1bit                         -- 'buscando' somador de 1 bit
@@ -74,23 +62,10 @@ use IEEE.STD_LOGIC_1164.ALL;
 	 end component;
 	
 
-	
-
-
-
-	
-
 	 signal v: std_logic_vector(3 downto 1);
-	
-
-	
-
-
 
 	
 	begin
-
-	
 
 	 soma0 : somador1bit PORT MAP(  x(0), '0' , '1', s(0),  v(1));
 	
