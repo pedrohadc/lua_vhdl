@@ -31,11 +31,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 
 entity operacao_and is
 	
-
-	
-
-	
-
 	port ( aa : in bit_vector(3 downto 0);
 	
 
@@ -46,17 +41,11 @@ entity operacao_and is
 	      ca : out bit_vector(3 downto 0));
 	
 
-	
-
 	end operacao_and;
 	
-
 	architecture Behavioral of operacao_and is
 
-	
-
 	begin
-	
 
 	ca(0) <= aa(0) and ba(0);
 
@@ -65,7 +54,6 @@ entity operacao_and is
 	ca(2) <= aa(2) and ba(2);
 
 	ca(3) <= aa(3) and ba(3);
-
 
 end Behavioral; 
 
