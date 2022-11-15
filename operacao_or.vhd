@@ -30,7 +30,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity operacao_or is
-	
 
 	port ( aor : in bit_vector(3 downto 0);
 	
@@ -38,30 +37,14 @@ entity operacao_or is
 	      bor : in  bit_vector(3 downto 0);
 	
 
-	      cor : out bit_vector(3 downto 0));
+	      cor : out bit_vector(3 downto 0)); 
 	
-
-	     
-	
-
 	end operacao_or;
 	
 
-	
-
-
-
-	
-
 	architecture Behavioral of operacao_or is
-	
 
-	
 	begin
-	
-
-	
-	
 
 	cor(0) <= aor(0) or bor(0);
 	
@@ -73,8 +56,5 @@ entity operacao_or is
 	
 
 	cor(3) <=  aor(3) or bor(3);
-
-
-	
 
 	end Behavioral;
