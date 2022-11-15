@@ -117,10 +117,13 @@ signal s8 : std_logic_vector(3 downto 0);
 signal cout1, cout2, cout3, cout4, cout7 : std_logic;
 signal r : std_logic_vector(3 downto 0);
 signal cont_tmp : unsigned(3 downto 0);
+signal clk_tmp : std_logic;
 
 begin 
-cont : contador port map(clk, cont_tmp);
-x <= std_logic_vector(cont_tmp) when switch_key = '1' else x;
+clk_tmp : clk and switch_key;
+cont : contador port map(clk_tmp, cont_tmp);
+x <= std_logic_vector(cont_tmp);
+
 
 soma: somador4bits PORT MAP( x, y, '0', s1, cout1);
 subtracaao : subtracao PORT MAP ( x, y, '1', s2, cout2);
@@ -151,8 +154,9 @@ comp : comparador PORT MAP ( x, y, s8);
 	saida <= r;
 
 	overflow <= ((not x(3)) and (not y(3)) and (r(3))) or 
-	((x(3)) and (y(3)) and (not r(3))) when (sel= "000" or sel="001" or sel="010"
-	or sel="011" or sel="110") else
+	((x(3)) and (y(3)) and (not r(3))) when (sel= "000" or sel="011" or sel="110") else
+		    ((not x(3)) and (y(3)) and (r(3))) or
+	((x(3)) and (not y(3)) and (not r(3))) when (sel= "001" or sel= "010") else
 	'0';
 	
 	zero <= '1' when (r = "0000") else
