@@ -34,40 +34,21 @@ use IEEE.STD_LOGIC_1164.ALL;
 	
 
 	port (x: in std_logic_vector(3 downto 0);     --vetores de entrada
-	
-
 	     carryin : in std_logic;                    --carry in geral
-	
-
 	     s : out std_logic_vector(3 downto 0);      --soma
-	
-
 	     carryout : out std_logic);                  --carry out geral
 	
-
+		
 	end troca_de_sinal;
 	
 
-	
-
-
-
-	
 
 	architecture hardware of troca_de_sinal is
-	
-
-	
-
 
 	 component somador1bit                         -- 'buscando' somador de 1 bit
-	
-
+		
 	 port (a, b, cin : in std_logic;               -- entradas e carry in do somador
-	
-
 	       c, cout : out std_logic);               -- soma e carry out do somador
-	
 
 	 end component;
 	
@@ -77,22 +58,14 @@ use IEEE.STD_LOGIC_1164.ALL;
 	
 
 	begin
-	
-
 
 	 soma0 : somador1bit PORT MAP(  not(x(0)), '0' , '1', s(0),  v(1));
 	
-
 	 soma1 : somador1bit PORT MAP(  not(x(1)), '0' , v(1), s(1), v(2));
 	
-
 	 soma2 : somador1bit PORT MAP(  not(x(2)), '0' , v(2), s(2), v(3));
 	
-
 	 soma3 : somador1bit PORT MAP(  not(x(3)), '0' , v(3), s(3), carryout);
-	
-
-	
 
 	end hardware;
 
