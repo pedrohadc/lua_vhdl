@@ -30,7 +30,6 @@ use IEEE.STD_LOGIC_1164.ALL;
 --use UNISIM.VComponents.all;
 
 entity somador1bit is
-	
 
 	port ( a : in STD_LOGIC;
 	
@@ -46,7 +45,6 @@ entity somador1bit is
 
 	      cout : out STD_LOGIC) ;
 	
-
 	end somador1bit;
 	
 
